@@ -1,7 +1,3 @@
-body {
-  font-family: "Varela Round", Verdana, sans-serif;
-}
-
 .images-wrapper {
   position: relative;
   max-width: 375px;
@@ -17,29 +13,29 @@ body {
 }
 
 .hangman__head-img {
-  grid-area: 1/5/2/25;
+  grid-area: 1 / 5 / 2 / 25;
 }
 
 .hangman__hand-one-img {
-  grid-area: 2/2/3/15;
+  grid-area: 2 / 2 / 3 / 15;
 }
 
 .hangman__body-img {
-  grid-area: 2/14/3/15;
+  grid-area: 2 / 14 / 3 / 15;
 }
 
 .hangman__hand-two-img {
-  grid-area: 2/14/3/28;
+  grid-area: 2 / 14 / 3 / 28;
 }
 
 .hangman__leg-one-img {
-  grid-area: 3/2/4/15;
+  grid-area: 3 / 2 / 4 / 15;
 }
 
 .hangman__leg-two-img {
-  grid-area: 3/14/4/28;
+  grid-area: 3 / 14 / 4 / 28;
 }
 
 .hangman-part-img {
   opacity: 0;
-}/*# sourceMappingURL=style.css.map */
+}
