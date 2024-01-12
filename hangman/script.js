@@ -41,3 +41,27 @@ const createHangmanPartsImgElement = function(imgName) {
 
 const hangmanParts = ['head', 'body', 'hand-one', 'hand-two', 'leg-one', 'leg-two'];
 hangmanParts.forEach(part => createHangmanPartsImgElement(part));
+
+// Play area section markup
+const secretWord = document.createElement('div');
+const question = document.createElement('h2');
+const counterDescript = document.createElement('h3');
+const counterRecord = document.createElement('span');
+const keyboard = document.createElement('div');
+
+secretWord.className = 'secret-word';
+question.className = 'question';
+question.innerText = 'Hint: ';
+
+counterDescript.className = 'counter-description';
+counterDescript.innerText = 'Incorrect guesses: '
+counterRecord.className = 'counter';
+counterRecord.innerText = '0 / 6';
+
+keyboard.className = 'keyboard';
+
+counterDescript.appendChild(counterRecord);
+playAreaSection.appendChild(secretWord);
+playAreaSection.appendChild(question);
+playAreaSection.appendChild(counterDescript);
+playAreaSection.appendChild(keyboard);
