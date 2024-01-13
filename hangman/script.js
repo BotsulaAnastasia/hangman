@@ -31,7 +31,7 @@ imagesWrapper.appendChild(hangman);
 gallowsSection.appendChild(imagesWrapper);
 gallowsSection.appendChild(gameName);
 
-const createHangmanPartsImgElement = function(imgName) {
+function createHangmanPartsImgElement(imgName) {
   const hangmanPart = document.createElement('img');
   hangmanPart.className = `hangman__${imgName}-img hangman-part-img`;
   hangmanPart.src = `./images/${imgName}.svg`;
@@ -65,3 +65,18 @@ playAreaSection.appendChild(secretWord);
 playAreaSection.appendChild(question);
 playAreaSection.appendChild(counterDescript);
 playAreaSection.appendChild(keyboard);
+
+// Keyboard
+const keyboardLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
+'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+
+function createKeyboard(letter) {
+  const keyboardBtn = document.createElement('button');
+  keyboardBtn.className = 'keyboard__btn btn';
+  keyboardBtn.innerText = `${letter}`;
+
+  keyboard.appendChild(keyboardBtn);
+}
+
+keyboardLetters.forEach(letter => createKeyboard(letter));

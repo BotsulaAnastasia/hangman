@@ -1,5 +1,18 @@
-body {
+.btn, body {
   font-family: "Varela Round", Verdana, sans-serif;
+}
+
+.keyboard {
+  max-width: 445px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.keyboard__btn {
+  width: 40px;
+  height: 40px;
 }
 
 .images-wrapper {
