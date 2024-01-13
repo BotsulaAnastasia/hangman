@@ -55,4 +55,30 @@
 
 .hangman-part-img {
   opacity: 0;
+}
+
+.secret-word {
+  display: flex;
+  gap: 5px;
+}
+
+.word-letter-wrapper {
+  position: relative;
+  width: 25px;
+  text-align: center;
+}
+
+.word-letter,
+.underscore {
+  font-size: 30px;
+}
+
+.underscore {
+  position: absolute;
+  width: 25px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

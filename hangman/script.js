@@ -80,3 +80,26 @@ function createKeyboard(letter) {
 }
 
 keyboardLetters.forEach(letter => createKeyboard(letter));
+
+// Secret word
+let word = 'ADDRESS';
+
+function showSecretWord(letter) {
+  const wordLetterWrapper = document.createElement('div');
+  const wordLetter = document.createElement('span');
+  const letterUnderscore = document.createElement('span');
+
+  wordLetterWrapper.className = 'word-letter-wrapper';
+
+  wordLetter.className = 'word-letter';
+  wordLetter.innerText = `${letter}`;
+
+  letterUnderscore.className = 'underscore';
+  letterUnderscore.innerText = '_';
+
+  wordLetterWrapper.appendChild(wordLetter);
+  wordLetterWrapper.appendChild(letterUnderscore);
+  secretWord.appendChild(wordLetterWrapper);
+}
+
+word.split('').forEach(letter => showSecretWord(letter));
