@@ -100,6 +100,7 @@ function checkLetter() {
 
   if (!word.includes(pressedButton)) {
     counter++;
+    showCounterValue(counter);
     showHangmanPart();
   }
 }
@@ -142,4 +143,10 @@ const hangmanPartsImg = document.querySelectorAll('.hangman-part-img');
 function showHangmanPart() {
   const thisPart = hangmanPartsImg[counter - 1];
   thisPart.classList.remove('--hidden');
+}
+
+// Counter
+function showCounterValue(value) {
+  const counterEl = document.querySelector('.counter');
+  counterEl.innerText = `${value} / 6`;
 }
