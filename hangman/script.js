@@ -66,38 +66,6 @@ playAreaSection.appendChild(question);
 playAreaSection.appendChild(counterDescript);
 playAreaSection.appendChild(keyboard);
 
-// Keyboard
-const keyboardLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
-'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
-
-let pressedButton = null;
-
-function createKeyboard(letter) {
-  const keyboardBtn = document.createElement('button');
-  keyboardBtn.className = 'keyboard__btn btn';
-  keyboardBtn.innerText = `${letter}`;
-
-  keyboard.appendChild(keyboardBtn);
-
-  eventsOfClickedKeyboardButton(keyboardBtn);
-}
-
-function disablebButton(thisBtn) {
-  thisBtn.onclick = null;
-  thisBtn.classList.add('keyboard__btn_disabled');
-}
-
-function eventsOfClickedKeyboardButton(btn) {
-  btn.onclick = function() {
-    pressedButton = this.innerText;
-    checkLetter();
-    disablebButton(this);
-  };
-} 
-
-keyboardLetters.forEach(letter => createKeyboard(letter));
-
 // Secret word
 let word = 'ADDRESS';
 
@@ -135,6 +103,38 @@ function checkLetter() {
     showHangmanPart();
   }
 }
+
+// Keyboard
+const keyboardLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
+'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
+
+let pressedButton = null;
+
+function createKeyboard(letter) {
+  const keyboardBtn = document.createElement('button');
+  keyboardBtn.className = 'keyboard__btn btn';
+  keyboardBtn.innerText = `${letter}`;
+
+  keyboard.appendChild(keyboardBtn);
+
+  eventsOfClickedKeyboardButton(keyboardBtn);
+}
+
+function disablebButton(thisBtn) {
+  thisBtn.onclick = null;
+  thisBtn.classList.add('keyboard__btn_disabled');
+}
+
+function eventsOfClickedKeyboardButton(btn) {
+  btn.onclick = function() {
+    pressedButton = this.innerText;
+    checkLetter();
+    disablebButton(this);
+  };
+} 
+
+keyboardLetters.forEach(letter => createKeyboard(letter));
 
 // Hangman
 const hangmanPartsImg = document.querySelectorAll('.hangman-part-img');
