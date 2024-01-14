@@ -13,4 +13,10 @@
 .keyboard__btn {
   width: 40px;
   height: 40px;
+  cursor: pointer;
+}
+
+.keyboard__btn_disabled {
+  background-color: #909090;
+  cursor: auto;
 }

@@ -16,6 +16,10 @@ main {
   margin: auto;
 }
 
+.--hidden {
+  opacity: 0;
+}
+
 .keyboard {
   max-width: 445px;
   display: flex;
@@ -27,6 +31,12 @@ main {
 .keyboard__btn {
   width: 40px;
   height: 40px;
+  cursor: pointer;
+}
+
+.keyboard__btn_disabled {
+  background-color: #909090;
+  cursor: auto;
 }
 
 .images-wrapper {
@@ -65,10 +75,6 @@ main {
 
 .hangman__leg-two-img {
   grid-area: 3/14/4/28;
-}
-
-.hangman-part-img {
-  opacity: 0;
 }
 
 .secret-word {
