@@ -132,6 +132,8 @@ function eventsOfClickedKeyboardButton(btn) {
     pressedButton = this.innerText;
     checkLetter();
     disablebButton(this);
+    winGame();
+    loseGame();
   };
 } 
 
@@ -149,4 +151,49 @@ function showHangmanPart() {
 function showCounterValue(value) {
   const counterEl = document.querySelector('.counter');
   counterEl.innerText = `${value} / 6`;
+}
+
+// Modal
+const modal = document.createElement('section');
+const overlay = document.createElement('div');
+const modalWrapper = document.createElement('div');
+const modalWord = document.createElement('p');
+const modalMessage = document.createElement('p');
+const modalBtn = document.createElement('button');
+
+modal.className = 'modal';
+overlay.className = 'overlay';
+modalWrapper.className = 'modal-wrapper';
+
+modalWord.className = 'modal__secret-word';
+modalWord.innerText = word;
+
+modalMessage.className = 'modal__message';
+
+modalBtn.className = 'modal__btn btn';
+modalBtn.innerText = 'Play again';
+
+modalWrapper.appendChild(modalWord);
+modalWrapper.appendChild(modalMessage);
+modalWrapper.appendChild(modalBtn);
+overlay.appendChild(modalWrapper);
+modal.appendChild(overlay);
+document.body.appendChild(modal);
+
+function showModal() {
+  modal.classList.add('--active');
+}
+
+function winGame() {
+  if (document.querySelectorAll('.underscore.--hidden').length === word.length) {
+    modalMessage.innerText = 'You win!'
+    showModal();
+  }
+}
+
+function loseGame() {
+  if (counter === 6) {
+    modalMessage.innerText = 'You lose!'
+    showModal();
+  }
 }
