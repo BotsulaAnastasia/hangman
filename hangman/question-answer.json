@@ -1,0 +1,61 @@
+[
+    {
+      "id": 1,
+      "hint": "I can be thin or thick. I have a lot of pieces of paper. You can read me.",
+      "word": "BOOK" 
+    },
+
+    {
+        "id": 2,
+        "hint": "I am a room. I have a sink. I have a stove. I have a fridge. You use me for cooking.",
+        "word": "KITCHEN" 
+    },
+
+    {
+        "id": 3,
+        "hint": "I’m orange, I wear a green hat and I sound like a parrot.",
+        "word": "CARROT" 
+    },
+
+    {
+        "id": 4,
+        "hint": "I live in China. I am a kind of bear. I am black and white. I eat bamboo.",
+        "word": "PANDA" 
+    },
+
+    {
+        "id": 5,
+        "hint": "A place where very sick people are taken.",
+        "word": "HOSPITAL" 
+    },
+
+    {
+        "id": 6,
+        "hint": "A jewel.",
+        "word": "DIAMOND" 
+    },
+
+    {
+        "id": 7,
+        "hint": "A person who has authority and influence in the team.",
+        "word": "LEADER" 
+    },
+
+    {
+        "id": 8,
+        "hint": "It is an animal. It moves very slowly.",
+        "word": "TORTOISE" 
+    },
+
+    {
+        "id": 9,
+        "hint": "A spring month.",
+        "word": "APRIL" 
+    },
+
+    {
+        "id": 10,
+        "hint": "A special liquid that is used to stick things together.",
+        "word": "GLUE" 
+    }
+]

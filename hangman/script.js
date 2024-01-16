@@ -1,3 +1,5 @@
+import questions from "./question-answer.json" assert { type: "json" };
+
 const main = document.createElement('main');
 const gallowsSection = document.createElement('section');
 const playAreaSection = document.createElement('section');
@@ -42,6 +44,10 @@ function createHangmanPartsImgElement(imgName) {
 const hangmanParts = ['head', 'body', 'hand-one', 'hand-two', 'leg-one', 'leg-two'];
 hangmanParts.forEach(part => createHangmanPartsImgElement(part));
 
+let word = null;
+let hint = null;
+getRandomQuestion(1, 10);
+
 // Play area section markup
 const secretWord = document.createElement('div');
 const question = document.createElement('h2');
@@ -51,7 +57,7 @@ const keyboard = document.createElement('div');
 
 secretWord.className = 'secret-word';
 question.className = 'question';
-question.innerText = 'Hint: ';
+question.innerText = `Hint: ${hint}`;
 
 counterDescript.className = 'counter-description';
 counterDescript.innerText = 'Incorrect guesses: '
@@ -67,7 +73,7 @@ playAreaSection.appendChild(counterDescript);
 playAreaSection.appendChild(keyboard);
 
 // Secret word
-let word = 'ADDRESS';
+
 
 function showSecretWord(letter) {
   const wordLetterWrapper = document.createElement('div');
@@ -197,3 +203,12 @@ function loseGame() {
     showModal();
   }
 }
+
+function getRandomQuestion(min, max) {
+  const randomId = Math.floor(Math.random() * (max - min + 1)) + min;
+  const randomObj = questions.find(obj => obj.id === randomId);
+  word = randomObj.word;
+  hint = randomObj.hint;
+  console.log(word);
+}
+
