@@ -203,6 +203,7 @@ function winGame() {
     modalWord.innerText = word;
     modalMessage.innerText = 'You win!';
     showModal();
+    document.removeEventListener('keydown', checkPressedKey);
   }
 }
 
@@ -211,6 +212,7 @@ function loseGame() {
     modalWord.innerText = word;
     modalMessage.innerText = 'You lose!';
     showModal();
+    document.removeEventListener('keydown', checkPressedKey);
   }
 }
 
@@ -235,12 +237,14 @@ function playAgain() {
   hangmanPartsImg.forEach(part => {
     return part.classList.add('--hidden');
   });
+  document.addEventListener('keydown', checkPressedKey);
 }
 
 modalBtn.onclick = playAgain;
 
 // checkPressedKey
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', checkPressedKey);
+function checkPressedKey(event) {
   if (event.code.includes('Key')) {
     const keyValue = event.code.slice(-1);
     for (const el of document.querySelectorAll('.word-letter')) {
@@ -265,4 +269,4 @@ document.addEventListener('keydown', function(event) {
     winGame();
     loseGame();
   }
-});
+}
