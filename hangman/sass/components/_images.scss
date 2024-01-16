@@ -1,37 +1,81 @@
 .images-wrapper {
   position: relative;
-  max-width: 375px;
+  min-width: 350px;
 }
 
 .hangman {
   position: absolute;
-  top: 150px;
+  top: 140px;
   right: 0;
   display: grid;
-  grid-template-columns: repeat(28, 5px);
+  grid-template-columns: repeat(auto-fit, minmax(5px, 1fr));
   grid-template-rows: 100px 125px 80px;
+  @media (max-width: 768px) {
+    & {
+      top: 120px;
+      right: 40px;
+      grid-template-rows: 87px 113px 72px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hangman-part-img {
+    width: 90%;
+  }
 }
 
 .hangman__head-img {
   grid-area: 1 / 5 / 2 / 25;
+  @media (max-width: 768px) {
+    & {
+      width: 80%;
+      grid-area: 1 / 7 / 2 / 25;
+    }
+  }
 }
 
 .hangman__hand-one-img {
   grid-area: 2 / 2 / 3 / 15;
+  @media (max-width: 768px) {
+    & {
+      grid-area: 2 / 5 / 3 / 16;
+    }
+  }
 }
 
 .hangman__body-img {
   grid-area: 2 / 14 / 3 / 15;
+  @media (max-width: 768px) {
+    & {
+      width: 100%;
+    }
+  }
 }
 
 .hangman__hand-two-img {
   grid-area: 2 / 14 / 3 / 28;
+  @media (max-width: 768px) {
+    & {
+      grid-area: 2 / 14 / 3 / 27;
+    }
+  }
 }
 
 .hangman__leg-one-img {
   grid-area: 3 / 2 / 4 / 15;
+  @media (max-width: 768px) {
+    & {
+      grid-area: 3 / 5 / 4 / 16;
+    }
+  }
 }
 
 .hangman__leg-two-img {
   grid-area: 3 / 14 / 4 / 28;
+  @media (max-width: 768px) {
+    & {
+      grid-area: 3 / 14 / 4 / 27;
+    }
+  }
 }

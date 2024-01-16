@@ -16,3 +16,14 @@ main {
 .--hidden {
   opacity: 0;
 }
+
+.title {
+  font-size: 2em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
