@@ -177,7 +177,6 @@ overlay.className = 'overlay';
 modalWrapper.className = 'modal-wrapper';
 
 modalWord.className = 'modal__secret-word';
-modalWord.innerText = word;
 
 modalMessage.className = 'modal__message';
 
@@ -201,14 +200,16 @@ function closeModal() {
 
 function winGame() {
   if (document.querySelectorAll('.underscore.--hidden').length === word.length) {
-    modalMessage.innerText = 'You win!'
+    modalWord.innerText = word;
+    modalMessage.innerText = 'You win!';
     showModal();
   }
 }
 
 function loseGame() {
   if (counter === 6) {
-    modalMessage.innerText = 'You lose!'
+    modalWord.innerText = word;
+    modalMessage.innerText = 'You lose!';
     showModal();
   }
 }
