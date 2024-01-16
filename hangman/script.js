@@ -249,16 +249,16 @@ document.addEventListener('keydown', function(event) {
       }
     }
 
-    if (!word.includes(keyValue)) {
-      counter++;
-      showCounterValue(counter);
-      showHangmanPart();
-    }
-
     const virtualBtns = document.querySelectorAll('.keyboard__btn');
     for (let i = 0; i < virtualBtns.length; i++) {
-      if (virtualBtns[i].innerText === keyValue) {
+      if (virtualBtns[i].innerText === keyValue &&
+        !virtualBtns[i].classList.contains('keyboard__btn_disabled')) {
         disablebButton(virtualBtns[i]);
+        if (!word.includes(keyValue)) {
+          counter++;
+          showCounterValue(counter);
+          showHangmanPart();
+        }
       }
     }
 
