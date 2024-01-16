@@ -91,7 +91,7 @@ main {
 
 .word-letter-wrapper {
   position: relative;
-  width: 25px;
+  width: 30px;
   text-align: center;
 }
 
@@ -102,7 +102,7 @@ main {
 
 .underscore {
   position: absolute;
-  width: 25px;
+  width: 30px;
   top: 0;
   left: 0;
   z-index: 1;

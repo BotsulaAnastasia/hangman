@@ -227,6 +227,7 @@ function playAgain() {
   closeModal();
   secretWord.textContent = '';
   word.split('').forEach(letter => showSecretWord(letter));
+  question.innerText = `Hint: ${hint}`;
   activeBtn();
   counter = 0;
   showCounterValue(counter);
@@ -236,3 +237,31 @@ function playAgain() {
 }
 
 modalBtn.onclick = playAgain;
+
+// checkPressedKey
+document.addEventListener('keydown', function(event) {
+  if (event.code.includes('Key')) {
+    const keyValue = event.code.slice(-1);
+    for (const el of document.querySelectorAll('.word-letter')) {
+      if (el.textContent === keyValue) {
+        el.nextSibling.classList.add('--hidden');
+      }
+    }
+
+    if (!word.includes(keyValue)) {
+      counter++;
+      showCounterValue(counter);
+      showHangmanPart();
+    }
+
+    const virtualBtns = document.querySelectorAll('.keyboard__btn');
+    for (let i = 0; i < virtualBtns.length; i++) {
+      if (virtualBtns[i].innerText === keyValue) {
+        disablebButton(virtualBtns[i]);
+      }
+    }
+
+    winGame();
+    loseGame();
+  }
+});
