@@ -73,8 +73,6 @@ playAreaSection.appendChild(counterDescript);
 playAreaSection.appendChild(keyboard);
 
 // Secret word
-
-
 function showSecretWord(letter) {
   const wordLetterWrapper = document.createElement('div');
   const wordLetter = document.createElement('span');
@@ -131,6 +129,13 @@ function createKeyboard(letter) {
 function disablebButton(thisBtn) {
   thisBtn.onclick = null;
   thisBtn.classList.add('keyboard__btn_disabled');
+}
+
+function activeBtn() {
+  document.querySelectorAll('.keyboard__btn').forEach(btn => {
+    eventsOfClickedKeyboardButton(btn);
+    btn.classList.remove('keyboard__btn_disabled');
+  });
 }
 
 function eventsOfClickedKeyboardButton(btn) {
@@ -190,6 +195,10 @@ function showModal() {
   modal.classList.add('--active');
 }
 
+function closeModal() {
+  modal.classList.remove('--active');
+}
+
 function winGame() {
   if (document.querySelectorAll('.underscore.--hidden').length === word.length) {
     modalMessage.innerText = 'You win!'
@@ -212,3 +221,18 @@ function getRandomQuestion(min, max) {
   console.log(word);
 }
 
+// Play again
+function playAgain() {
+  getRandomQuestion(1, 10);
+  closeModal();
+  secretWord.textContent = '';
+  word.split('').forEach(letter => showSecretWord(letter));
+  activeBtn();
+  counter = 0;
+  showCounterValue(counter);
+  hangmanPartsImg.forEach(part => {
+    return part.classList.add('--hidden');
+  });
+}
+
+modalBtn.onclick = playAgain;
