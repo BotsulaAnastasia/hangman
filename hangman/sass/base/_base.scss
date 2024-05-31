@@ -1,0 +1,29 @@
+body {
+  @extend %font-family;
+  background-color: #2c2c36;
+  color: #fff;
+}
+
+main {
+  max-width: 900px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.--hidden {
+  opacity: 0;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+}
