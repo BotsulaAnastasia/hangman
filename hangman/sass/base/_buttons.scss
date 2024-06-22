@@ -1,0 +1,28 @@
+.btn {
+  @extend %font-family;
+}
+
+.keyboard {
+  max-width: 445px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.keyboard__btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.keyboard__btn_disabled {
+  background-color: #909090;
+  cursor: auto;
+}
+
+.modal__btn {
+  font-size: 25px;
+  cursor: pointer;
+  margin: 30px 0;
+}

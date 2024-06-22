@@ -1,0 +1,12 @@
+.gallows-section {
+  margin: 20px;
+}
+
+.gallows {
+  width: 95%;
+  @media (max-width: 768px) {
+    & {
+      width: 80%;
+    }
+  }
+}
